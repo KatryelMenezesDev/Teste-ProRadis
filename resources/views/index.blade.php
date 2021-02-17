@@ -12,27 +12,12 @@
                         <table class="table table-bordered table-responsive table-striped table-hover ">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th>Nome</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mariazinha</td>
-                                    <td><a href="#" class="btn btn-success btn-sm">Nova Consulta</a></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Pedrinho</td>
-                                    <td><a href="#" class="btn btn-success btn-sm">Nova Consulta</a></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Chiquinho</td>
-                                    <td><a href="#" class="btn btn-success btn-sm">Nova Consulta</a></td>
-                                </tr>
+                            <tbody id="PacienteLista">
+
                             </tbody>
                         </table>
                     </div>
@@ -78,7 +63,7 @@
         </div>
     </div>
     <div class="col-md-9">
-        <h1 align="center"><i class="fas fa-user"></i> Paciente Mariazinha</h1>
+        <h1 align="center" id="title-paciente"><i class="fas fa-user"></i> Paciente Mariazinha</h1>
         <hr>
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -86,9 +71,11 @@
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="17"></textarea>
+                    <textarea class="form-control" id="prontuario" rows="17"></textarea>
                 </div>
-                <a href="#" class="btn btn-block btn-primary"><i class="fas fa-save"></i> Salvar Consulta</a>
+                <div id="btn-action">
+                    <button type="button" id="btnConsulta" onclick="salvarConsulta()" class="btn btn-block btn-primary"><i class="fas fa-save"></i> Salvar Consulta</button>
+                </div>
                 </form>
             </div>
         </div>

@@ -19,7 +19,7 @@ class CreatePacientesTable extends Migration
             $table->char('sexo', 100);
             $table->date('nascimento');
             $table->string('cpf', 14)->unique();
-            $table->unsignedBigInteger('consultas_id');
+            $table->unsignedBigInteger('consultas_id')->nullable();
             $table->foreign('consultas_id')->references('id')->on('consultas');
             $table->timestamps();
         });

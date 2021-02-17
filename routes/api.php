@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+
+Route::get('/paciente', 'App\Http\Controllers\api\PacienteController@index');
+Route::get('/paciente/{id}', 'App\Http\Controllers\api\PacienteController@show');
+Route::post('/paciente', 'App\Http\Controllers\api\PacienteController@store');
