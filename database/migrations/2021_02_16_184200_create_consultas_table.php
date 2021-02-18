@@ -15,7 +15,7 @@ class CreateConsultasTable extends Migration
     {
         Schema::create('consultas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->mediumText('prontuario');
+            $table->text('prontuario');
             $table->timestamps();
         });
     }

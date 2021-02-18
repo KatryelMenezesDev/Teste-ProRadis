@@ -12,7 +12,7 @@
                     <div class="col-md-12">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nome Completo: </label>
-                                <input type="text" class="form-control" id="nome" placeholder="ex: Lucas Silva Santos">
+                                <input type="text" class="form-control" id="nome" placeholder="ex: Lucas Silva Santos" maxlength="10">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Sexo: </label>
@@ -47,3 +47,4 @@
         </div>
     </div>
 </div>
+<!-- Modal# -->

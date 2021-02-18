@@ -15,20 +15,10 @@ class ConsultaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() // Carrega Lista de Pacientes
     {
        $pacientes =  Paciente::where('consultas_id','<>',null)->get();
        return json_encode($pacientes);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -37,7 +27,7 @@ class ConsultaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //Cadastra o prontuário e vincula com Paciente.
     {
         $prontuario = new Consulta;
         $prontuario->prontuario = $request->prontuario;
@@ -57,7 +47,7 @@ class ConsultaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id)//Exibe "um" prontuário por id.
     {
         $Consulta = DB::table('consultas')
         ->join('pacientes', 'consultas.id', '=', 'pacientes.consultas_id')
@@ -68,37 +58,15 @@ class ConsultaController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request)//Atualiza prontúario do paciente.
     {
         Consulta::where('id',$request->prontuario_id)->update(['prontuario'=>$request->prontuario]);
         return json_encode(Consulta::find($request->prontuario_id));
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

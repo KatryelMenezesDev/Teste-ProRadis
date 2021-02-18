@@ -8,6 +8,7 @@
     <div class="container-fluid">
         @yield('content')
     </div>
+    
     @include('layout.script')
 </body>
 </html>

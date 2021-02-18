@@ -13,9 +13,9 @@ class PacienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() // Carrega lista de "Atendidos"
     {
-        $pacientes = Paciente::where('consultas_id',null)->get();
+        $pacientes = Paciente::where('consultas_id', null)->get();
         return json_encode($pacientes);
     }
 
@@ -25,7 +25,7 @@ class PacienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //Cadastra o Paciente no banco de dados.
     {
         $paciente = new Paciente;
         $paciente->nome = $request->input('nome');
@@ -42,23 +42,9 @@ class PacienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id) //Exibi um baciente especifico.
     {
         $paciente = Paciente::find($id);
         return json_encode($paciente);
-
-    }
-
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 }
