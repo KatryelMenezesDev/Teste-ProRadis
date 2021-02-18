@@ -15,7 +15,7 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        $pacientes = Paciente::all();
+        $pacientes = Paciente::where('consultas_id',null)->get();
         return json_encode($pacientes);
     }
 
@@ -28,12 +28,12 @@ class PacienteController extends Controller
     public function store(Request $request)
     {
         $paciente = new Paciente;
-        $paciente->name = $request->input('name');
+        $paciente->nome = $request->input('nome');
         $paciente->sexo = $request->input('sexo');
         $paciente->nascimento = $request->input('nascimento');
         $paciente->cpf = $request->input('cpf');
         $paciente->save();
-        return $paciente->id;
+        return json_encode($paciente);
     }
 
     /**
